@@ -36,3 +36,10 @@ console.log(res); // Output: "1.23e+4"
 let isLoggedIn: boolean = false;
 console.log(isLoggedIn ? "User is logged in" : "User is not logged in"); // Output: "User is not logged in"
 
+// any
+let hero: string;
+
+function getHero() {
+    return "thor";
+} 
+hero = getHero();

@@ -27,3 +27,9 @@ console.log(res); // Output: "1.23e+4"
 // boolean
 var isLoggedIn = false;
 console.log(isLoggedIn ? "User is logged in" : "User is not logged in"); // Output: "User is not logged in"
+// any
+var hero;
+function getHero() {
+    return "thor";
+}
+hero = getHero();
