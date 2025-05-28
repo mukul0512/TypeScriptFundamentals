@@ -20,3 +20,19 @@ myNum.toString(myNum);
 
 // Conclusion -> In TypeScript, variables can be declared with specific types, and you can use methods that are appropriate for those types. If you try to use a method that doesn't exist for a particular type, TypeScript will give you an error at compile time, helping you catch potential issues early in the development process.
 
+// number
+let userId: number  = 12345;
+console.log(userId.toLocaleString()); // Output: "12,345"
+
+let studentId = 12345;
+console.log(studentId.toFixed()); // Output: "12345"
+ // Output
+
+let newUserId: number  = 12345.2;
+let res = userId.toExponential(2);
+console.log(res); // Output: "1.23e+4"
+
+// boolean
+let isLoggedIn: boolean = false;
+console.log(isLoggedIn ? "User is logged in" : "User is not logged in"); // Output: "User is not logged in"
+
