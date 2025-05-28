@@ -31,3 +31,63 @@ isLoggedIn("Karnwal", "mukul@gmail.com");
 export {};
 
 // Conclusion -> In case of variables using type annotations is optional, but in case of functions it is recommended to use type annotations to avoid runtime errors.
+
+// ----------------------------------------------------------------------------------------------------------------
+function addTwoNum(num: number): number {
+    // return "Hello"; // This will cause a TypeError if num is not a number
+    return num + 2; // This will work correctly
+}
+let myValue = addTwoNum(5); 
+console.log(myValue);
+
+// Case 1:
+// function getValue(myVal: number): boolean{
+//     if(myVal > 5) {
+//         return true; 
+//     }
+//     return "200 OK"; // This will cause a TypeError if myVal is not a number
+// }
+
+// Case 2:
+// function getValue(myVal: number): string{
+//     if(myVal > 5) {
+//         return true;  // This will cause a TypeError if myVal is not a number
+//     }
+//     return "200 OK";
+// }
+
+// Case 3: this is the correct way to handle multiple return types
+function getValue(myVal: number): boolean | string {
+    if(myVal > 5) {
+        return true; 
+    }
+    return "200 OK"; // This will work correctly
+}
+
+const getHello = (s: string): string => {
+    return "";
+} 
+// Case 1: This will cause a TypeError if s is not a string
+// const heros = ["Thor", "Ironman", "Hulk"];
+//     heros.map((hero): string => {
+//         return `Hero is ${hero}`;
+//         // return 2; // This will cause a TypeError if hero is not a string
+// })
+
+// Case 2: This will work correctly if hero is a string
+const heros = ["Thor", "Ironman", "Hulk"];
+// const heros = [1 , 2, 3]; // This will cause a TypeError if heros is not an array of strings
+    heros.map(hero => {
+        return `Hero is ${hero}`; // This will work correctly if hero is a string
+        // return 2; // This will cause a TypeError if hero is not a string
+})
+
+// --------------------------------------------------------------------------------------
+
+function consoleError(errmssg: string): void {
+    console.log(errmssg);
+} 
+
+function handleError(errmssg: string): never {
+     throw new Error(errmssg);
+} 
